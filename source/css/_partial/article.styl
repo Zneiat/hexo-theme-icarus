@@ -36,15 +36,18 @@
     & > div
         float: left
         margin-right: 10px
-        .fa
+        i
             margin-right: 3px
     a
-        color: color-default
+        color: color-meta
         &:hover
             color: color-link
+    i
+        margin-right: 3px
+        color: color-meta
 
 .article-category
-    .fa-angle-right
+    i
         margin: 0 5px
 
 .article-tag
@@ -56,10 +59,14 @@
     @extend $base-style
     clearfix()
     color: color-default
-    padding: 0 article-padding
+    padding: article-padding
     line-height: line-height
     p
         text-align: justify
+    p:last-child
+        margin-bottom: 0
+    p:first-child
+        margin-top: 0
     p, table
         line-height: line-height
         margin: line-height 0
@@ -108,10 +115,10 @@
         &:before
             top: 20px
             left: 10px
-            content: "\f10d"
+            content: "\f1b2"
             color: #e2e2e2
             font-size: 32px;
-            font-family: FontAwesome
+            font-family: Material-Design-Iconic-Font
             text-align: center
             position: static
         footer
@@ -157,16 +164,16 @@
     display: inline-block
     line-height: 1em
     padding: 6px 15px
-    border-radius: 15px
+    border-radius: 1px
     background: color-background
     color: color-grey
-    text-shadow: 0 1px #fff
     text-decoration: none
     &:hover
         background: color-link
         color: #fff
         text-decoration: none
-        text-shadow: 0 1px darken(color-link, 20%)
+    i
+        margin-left: 4px
 
 .article-footer
     clearfix()
@@ -184,8 +191,8 @@
 .article-comment-link
     float: right
     &:before
-        content: "\f075"
-        font-family: FontAwesome
+        content: "\f265"
+        font-family: Material-Design-Iconic-Font
         padding-right: 5px
 
 .share-container
@@ -195,7 +202,7 @@
     float: right
     cursor: pointer
     margin-left: 20px
-    .fa-share
+    i
         margin-right: 5px
 
 #article-nav
@@ -335,7 +342,7 @@ $article-share-link
             line-height: 36px
             margin-top: -18px
             position: absolute
-            font-family: FontAwesome
+            font-family: Material-Design-Iconic-Font
             color: rgba(255, 255, 255, .5)
         &:hover
             &:before,

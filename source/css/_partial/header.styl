@@ -27,10 +27,11 @@ $header-block-right
         @extend $header-block
         @extend $header-block-left
         display: inline-block
+        border-right: 1px solid #F4F4F4;
         .logo
-            margin-right: 5px
             display: inline-block
         .site-title
+            margin-left: 5px
             font-size: 16px
             display: inline-block
             vertical-align: top
@@ -79,7 +80,6 @@ $header-block-right
     @media mq-normal
         display: none
 
-
 $nav-link
     float: left
     display: block
@@ -97,8 +97,11 @@ $nav-link
     line-height: logo-height !important
 
 .main-nav-link
-    @extend $nav-link
-    font-weight: 300
+  @extend $nav-link
+  font-weight: 300
+  color: color-default !important
+  &.active
+    color: color-link !important
 
 #sub-nav
     @media mq-normal
@@ -111,13 +114,13 @@ $nav-link
             display: block
             height: logo-height
             line-height: logo-height
-        .avatar, .fa
+        .avatar, i
             float: left
         .avatar
             width: logo-height
             height: logo-height
             margin-right: 8px
-        .fa
+        i
             line-height: logo-height
 
 #search-form-wrap
@@ -125,14 +128,15 @@ $nav-link
         display: none
     @extend $header-block
     @extend $header-block-right
+    border-left: 1px solid #F4F4F4;
     .search-form
         position: relative
         .search-form-input
             width: 100%
             padding: 0 30px 0 15px
             line-height: logo-height
-            height: logo-height !important
-            border-radius: ((logo-height + 2)/2)
+            height: 34px !important
+            border-radius: 2px
             &::-webkit-search-results-decoration
             &::-webkit-search-cancel-button
                 -webkit-appearance: none
@@ -144,10 +148,13 @@ $nav-link
             margin-top: -7px
             background: none
             position: absolute
-            font: 13px font-icon
-            font-family: 'FontAwesome'
+            font: 15px font-icon
+            color: rgba(0, 0, 0, 0.55)
+            outline: none
+            font-family:  Material-Design-Iconic-Font
+            pointer-events: none;
             &:before
-                content: '\f002'
+                content: '\f1c3'
             &:hover, &:focus
                 color: #777
 
@@ -168,7 +175,7 @@ $nav-link
     outline: none !important
     background: none !important
     font: font-size font-sans
-    border: 1px solid color-border !important
+    border: 1px solid transparent !important
     &:focus
         border-color: color-link !important
     &::-webkit-search-results-decoration
@@ -187,10 +194,11 @@ $nav-link
             @media mq-mini
                 display: block
             padding: 0 10px
+            margin-left: 5px
             margin-right: 15px
             height: header-sub-height - 16
             line-height: header-sub-height - 16
-            border-radius: ((header-sub-height - 16)/2)
+            border-radius: 2px
             &::-webkit-search-results-decoration
             &::-webkit-search-cancel-button
                 -webkit-appearance: none
