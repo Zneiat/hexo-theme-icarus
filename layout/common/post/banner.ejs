@@ -1,6 +1,6 @@
 <% if (post.link) { %>
 	<a href="<%- url_for(post.link) %>" target="_blank" itemprop="url">
-        <img src="<%- post.banner %>" class="article-banner" />
+        <img src="<%- asset_img(post, post.banner) %>" class="article-banner" />
     </a>
 <% } else if (post.title) { %>
 	<% if (index) { %>

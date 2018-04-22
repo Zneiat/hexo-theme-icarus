@@ -18,9 +18,9 @@
         <%- partial('post/gallery') %>
         <div class="article-entry" itemprop="articleBody">
         <% if (index && post.excerpt) { %>
-            <p><%- post.excerpt %></p>
+            <%- post.excerpt %>
             <p class="article-more-link">
-                <a href="<%- url_for(post.path) %>#more"><%= __('article.more') %> <i class="zmdi zmdi-chevron-right"></i></a>
+                <a href="<%- url_for(post.path) %>"><%= __('article.more') %> <i class="zmdi zmdi-chevron-right"></i></a>
             </p>
         <% } else { %>
             <% if (!index && post.toc) { %>
