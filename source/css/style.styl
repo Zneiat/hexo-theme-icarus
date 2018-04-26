@@ -95,3 +95,33 @@ if sidebar is left
         float: right
     #profile
         float: right
+
+/* anim */
+.anim-fade-in
+    animation-name: fadeIn
+    animation-fill-mode: both
+    animation-duration: .3s
+
+.anim-fade-out
+    animation-name: fadeOut
+    animation-duration: .2s
+
+.anim-flash
+    animation-name: flash
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+    to
+        opacity: 1
+
+@keyframes fadeOut
+    100%
+        opacity: 0
+    0%
+
+@keyframes flash
+    0%,50%,to
+        opacity: 1
+    25%,75%
+        opacity: 0

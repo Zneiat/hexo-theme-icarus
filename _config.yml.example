@@ -1,10 +1,10 @@
 # Menus
 menu:
-  Home: .
-  Archives: archives
-  Categories: categories
-  Tags: tags
-  About: about
+  主页: /
+  时间轴: /archives
+  目录: /categories
+  标签: /tags
+  关于: /about
 
 # Customize
 customize:
@@ -12,21 +12,20 @@ customize:
         enabled: true
         width: 40
         height: 40
-        url: images/logo.png
+        url: /images/logo-blue@notext-512.png
     profile:
         enabled: true # Whether to show profile bar
-        avatar: css/images/avatar.png
+        avatar: /images/avatar.png # https://avatars1.githubusercontent.com/u/22412567
         gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
-        author: PPOffice
-        author_title: Web Developer & Designer
-        location: Harbin, China
-        follow: https://github.com/ppoffice/
+        author: ZNEIAT
+        author_title: 生命不止，折腾不息
+        location: China
     highlight: monokai
     sidebar: right # sidebar position, options: left, right or leave it empty
     thumbnail: true # enable posts thumbnail, options: true, false
     favicon: # path to favicon
     social_links:
-        github: http://github.com/ppoffice/hexo-theme-icarus
+        github: https://github.com/Zneiat
         twitter: /
         facebook: /
         dribbble: /

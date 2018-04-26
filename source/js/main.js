@@ -1,5 +1,4 @@
 (function($){
-    var toTop = ($('#sidebar').height() - $(window).height()) + 60;
     // Caption
     $('.article-entry').each(function(i) {
         $(this).find('img').filter(function (element) {
@@ -43,23 +42,78 @@
         e.stopPropagation();
     });
 
-    // To Top
+    /**
+     * To Top & Fixed Profile
+     */
     if ($('#sidebar').length) {
+        checkFixedProfile();
+        checkShowToTop();
+
         $(document).on('scroll', function () {
-            if ($(document).width() >= 800) {
-                if(($(this).scrollTop() > toTop) && ($(this).scrollTop() > 0)) {
-                    $('#toTop').fadeIn();
-                    $('#toTop').css('left', $('#sidebar').offset().left);
-                } else {
-                    $('#toTop').fadeOut();
-                }
-            } else {
-                $('#toTop').fadeIn();
-                $('#toTop').css('right', 20);
-            }
+            checkFixedProfile();
+            checkShowToTop();
         }).on('click', '#toTop', function () {
             $('body, html').animate({ scrollTop: 0 }, 600);
         });
+    }
+
+    function checkFixedProfile() {
+        var scrollTop = $(document).scrollTop();
+        var profileElem = $('#profile');
+        var profileInnerElem = $('#profile .profile-inner');
+        var needFixedProfile = scrollTop >= profileElem.offset().top + profileElem.outerHeight(true);
+        var isProfileFixed = profileInnerElem.is('.profile-fixed');
+
+        if (!needFixedProfile) {
+            // 不固定
+            if (!isProfileFixed) return;
+
+            profileInnerElem.removeClass('profile-fixed');
+            profileInnerElem.css('position', '')
+                .css('width', '')
+                .css('top', '');
+
+            profileInnerElem.css('animation', 'none');
+        } else {
+            // 需固定
+            if (isProfileFixed) return;
+
+            profileInnerElem.addClass('profile-fixed');
+            profileInnerElem.css('position', 'fixed')
+                .css('width', profileElem.innerWidth() + 'px')
+                .css('top', '0');
+
+            profileInnerElem.css('animation', '');
+            profileInnerElem.addClass('anim-fade-in');
+        }
+    }
+
+    var isShowToTop = false;
+
+    function checkShowToTop() {
+        var scrollTop = $(document).scrollTop();
+        var toTopElem = $('#toTop');
+        var whereShow = $(window).height();
+        var isNeedShow = (scrollTop > 0) && (scrollTop > whereShow);
+
+        if ($(document).width() >= 800) {
+            if (isNeedShow) {
+                if (isShowToTop) return;
+                toTopElem.css('left', $('#sidebar').offset().left);
+                toTopElem.css('animation', '');
+                toTopElem.addClass('anim-fade-in');
+                toTopElem.show();
+                isShowToTop = true;
+            } else {
+                if (!isShowToTop) return;
+                toTopElem.hide();
+                toTopElem.css('animation', 'none');
+                isShowToTop = false;
+            }
+        } else {
+            toTopElem.show();
+            toTopElem.css('right', 20);
+        }
     }
 
 })(jQuery);
