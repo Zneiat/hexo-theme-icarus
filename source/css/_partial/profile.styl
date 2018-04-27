@@ -13,6 +13,7 @@
     line-height: 1.5em
 
 .profile-block
+    position relative
     padding: 15px 20px
     border-bottom: 1px solid color-border
     &:last-child
@@ -29,24 +30,51 @@
         margin-top: block-margin
         background: white
         .base-info
+            height: base-info-height
+            padding: 0
+            overflow: hidden
+            avatar-offset = (profile-cover-height/2 + 20)
+            avatar-margin = 23px
+            .profile-top-part
+                position: absolute
+                width: 100%
+                z-index: 1
+                height: base-info-height
+            .profile-bg
+                background-color: #FFF
+                height: profile-cover-height
+                background-image: url(profile-cover-url);
+                background-repeat: no-repeat;
+                box-shadow: 0 1px 8px 0 rgba(0,0,0,0.03)
+                background-size: 100% profile-cover-height;
+            .info-inner
+                position: relative
+                display: inline-block
+                margin-top: profile-cover-height
+                margin-left: (profile-avatar-size + avatar-margin)
             #avatar
+                position: absolute
                 display: block
-                margin: 10px auto 20px
+                margin: avatar-offset auto 0 avatar-margin
                 width: profile-avatar-size
                 height: profile-avatar-size
-                border-radius: 4px
+                box-sizing: border-box
+                color: rgb(255, 255, 255)
+                border-radius: 50%
+                border: 3px solid rgb(255, 255, 255)
             #name, #title, #location
                 display: block
-                text-align: center
+                padding-left: 17px
+                padding-right: 17px
             #name
                 font-size: 20px
                 font-weight: 600
-            #location
-                font-size: font-size - 2
-                margin-top: 5px
-                color: color-default + #444
-                i
-                    margin-right: 5px
+                text-align: left
+                padding-top: 10px
+                padding-bottom: 5px
+            #title
+                padding-bottom: 15px
+
         .article-info
             clearfix()
             padding: 0px

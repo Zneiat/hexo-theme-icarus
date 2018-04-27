@@ -3,10 +3,14 @@
 <aside id="profile">
     <div class="inner profile-inner">
         <div class="base-info profile-block">
-            <img id="avatar" src="<%= ( profile.gravatar ? gravatar(profile.gravatar, 128) : url_for(profile.avatar)) %>" />
-            <h2 id="name"><%= profile.author %></h2>
-            <h3 id="title"><%= profile.author_title %></h3>
-            <span id="location"><i class="zmdi zmdi-pin"></i><%= profile.location %></span>
+            <div class="profile-top-part">
+                <img id="avatar" src="<%= ( profile.gravatar ? gravatar(profile.gravatar, 128) : url_for(profile.avatar)) %>" />
+                <div class="info-inner">
+                    <h2 id="name"><%= profile.author %></h2>
+                    <h3 id="title"><%= profile.author_title %></h3>
+                </div>
+            </div>
+            <div class="profile-bg"></div>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
