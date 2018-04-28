@@ -11,7 +11,9 @@
     box-shadow: 0 3px 8px 0 rgba(0,0,0,0.03)
 
 .article-header
-    padding: article-padding article-padding 0
+    padding: article-padding article-padding
+    border-bottom: 1px solid #F4F4F4
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.03)
     .article-title
         display: block
         margin-bottom: 14px
@@ -60,7 +62,7 @@
     @extend $base-style
     clearfix()
     color: color-default
-    padding: article-padding
+    padding: article-padding + 5px article-padding article-padding article-padding
     line-height: line-height
     p
         text-align: justify
@@ -165,16 +167,41 @@
     display: inline-block
     line-height: 1em
     padding: 6px 15px
-    border-radius: 1px
-    background: color-background
-    color: color-grey
+    border-radius: 3px
+    color: color-link
+    text-indent: -12px
+    transition: all ease 200ms
     text-decoration: none
+    border: 2px solid transparent
     &:hover
-        background: color-link
-        color: #fff
         text-decoration: none
+        text-indent: 0
+        border: 2px solid color-link
     i
+        opacity: 0
         margin-left: 4px
+    &:hover i
+        opacity: 1
+
+.article-tag-block
+    clearfix()
+    padding: article-padding article-padding 0
+    line-height: line-height
+    padding-bottom: 5px
+    i
+        color: #777
+        margin-right: 15px
+    .tag-link
+        display: inline-block
+        margin: 0 8px 0 0
+        padding: 2px 10px
+        background: #51c2ff
+        border-radius: 3px
+        color: #FFF
+        transition: all .3s ease-out
+        font-size: 15px
+        margin-bottom: article-padding - 5px
+
 
 .article-footer
     clearfix()

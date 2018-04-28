@@ -1,18 +1,17 @@
 # Icarus
 
-### The blog theme you may fall in love with, coming to Hexo. [Preview](http://ppoffice.github.io/hexo-theme-icarus/)
-![](http://ppoffice.github.io/hexo-theme-icarus/gallery/preview.png "")
+![](https://user-images.githubusercontent.com/22412567/39397255-d1041bc4-4b2e-11e8-9be5-da96f871c5a6.png)
 
 #### [View Documentation](https://github.com/ppoffice/hexo-theme-icarus/wiki)
 :star: It is strongly recommended that you read the docs before using Icarus.
 
 ## Features
 
-### Profile Sidebar
+### Fixed Profile Sidebar
 
-A nice place to show yourself. You can add your own information in your site's `_config.yml`
+A nice place to show yourself and it's a fixed place. You can add your own information in your site's `_config.yml`
 
-![](http://ppoffice.github.io/hexo-theme-icarus/gallery/profile.png "")
+![](https://user-images.githubusercontent.com/22412567/39397288-5c7d3c30-4b2f-11e8-8dd3-035955e691da.gif)
 
 ### Self-hosted Insite Search Engine
 With the help of [Insight Search](https://github.com/ppoffice/hexo-theme-icarus/wiki/Search#insight-search), you can search anything inside your site without any third-party plugin.

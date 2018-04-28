@@ -1,0 +1,6 @@
+<% if (post.tags && post.tags.length) { %>
+<div class="article-tag-block">
+    <i class="zmdi zmdi-tag"></i>
+    <%- list_tags(post.tags, { show_count: true, style: 'link', separator: '' }) %>
+</div>
+<% } %>

@@ -60,75 +60,82 @@
                 height: profile-avatar-size
                 box-sizing: border-box
                 color: rgb(255, 255, 255)
-                border-radius: 50%
+                border-radius: 10px
                 border: 3px solid rgb(255, 255, 255)
             #name, #title, #location
                 display: block
                 padding-left: 17px
                 padding-right: 17px
             #name
+                color: #555
                 font-size: 20px
                 font-weight: 600
                 text-align: left
-                padding-top: 10px
-                padding-bottom: 5px
+                padding-top: 15px
+                padding-bottom: 2px
             #title
+                color: color-meta
                 padding-bottom: 15px
 
         .article-info
             clearfix()
-            padding: 0px
+            box-shadow: 0 3px 8px 0 rgba(0,0,0,0.03)
+            padding: 20px 10px
             .article-info-block
                 width: 50%
                 float: left
-                padding: 20px 15px
+                padding: 0 15px
                 text-align: center
                 box-sizing: border-box
                 font-size: font-size + 6px
+                color: #51c2ff
                 span
-                    display: block
+                    color: color-meta
+                    margin-left: 3px
                     font-size: font-size
                     text-transform: uppercase
                 &:first-child
                     border-right: 1px solid color-border
         .social-links
-            & > table
-                width: 100%
-                td
-                    text-align: center
-                    font-size: font-size + 10px
-                    a
-                        position: relative
-                        transition: 0.2s ease
-                        color: color-default + #333
-                        &:hover
-                            color: color-default
-                        &.tooltip:hover
-                            &:after
-                                right: -50%
-                                top: -41px
-                                color: white
-                                background: #333
-                                font-size: 14px
-                                content: attr(title)
-                                display: block
-                                padding: 5px 15px
-                                position: absolute
-                                white-space: nowrap
-                                border-radius: 2px
-                                text-transform: uppercase
-                                box-shadow: 0 0 2px rgba(0, 0, 0, 0.2)
-                                z-index: 1
-                            &:before
-                                top: -12px
-                                right: 8px
-                                border: solid
-                                border-color: #333 transparent
-                                border-width: 5px 5px 0 5px
-                                content: ""
-                                display: block
-                                position: absolute
-                                z-index: 2
+            padding: 10px 10px
+            display: flex
+            flex-direction: row
+            .social-link-item
+                text-align: center
+                font-size: font-size + 10px
+                flex: 1
+                a
+                    position: relative
+                    transition: 0.2s ease
+                    color: color-default + #333
+                    &:hover
+                        color: color-default
+                    &.tooltip:hover
+                        &:after
+                            right: -150%
+                            top: -41px
+                            color: white
+                            background: #333
+                            font-size: 14px
+                            content: attr(title)
+                            display: block
+                            padding: 5px 15px
+                            position: absolute
+                            white-space: nowrap
+                            border-radius: 2px
+                            text-transform: uppercase
+                            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2)
+                            z-index: 1
+                        &:before
+                            top: -12px
+                            right: 8px
+                            border: solid
+                            border-color: #333 transparent
+                            border-width: 5px 5px 0 5px
+                            content: ""
+                            display: block
+                            position: absolute
+                            z-index: 2
     &.card
         top: 50px
         right: 20px
