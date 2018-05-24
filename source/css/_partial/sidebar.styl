@@ -35,17 +35,30 @@
         margin-right: 5px
 
 .widget-wrap
-    margin: block-margin 10px
+    margin: block-margin 0
+    background: #FFF
+    border-radius: 4px
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.03)
     @media mq-mini
         margin: block-margin 20px
 
 .widget-title
     @extend $block-caption
-    padding: (block-margin/2) 0 0 0;
+    color: color-default
+    padding: 15px
     margin-bottom: 0
+    border-bottom: 1px solid #F4F4F4
+
+    &:before
+        color: color-link
+        content: "\f2fb"
+        font-size: 12px
+        margin-right: 10px
+        font-family: Material-Design-Iconic-Font
+        transition: 0.2s ease
 
 .widget
-    padding: 15px 5px
+    padding: 5px 15px 15px 15px
     a
         color: color-sidebar-text
         text-decoration: none
