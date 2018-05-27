@@ -1,15 +1,16 @@
+<% var title_icon = !!post.title_icon ? '<i class="title-icon zmdi zmdi-' + post.title_icon + '"></i>' : ''; %>
 <% if (post.link) { %>
     <h1 itemprop="name">
-        <a class="<%= class_name %>" href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%= post.title %></a>
+        <a class="<%= class_name %>" href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%- title_icon %><%= post.title %></a>
     </h1>
 <% } else if (post.title) { %>
     <% if (index) { %>
         <h1 itemprop="name">
-            <a class="<%= class_name %>" href="<%- url_for(post.path) %>"><%= post.title %></a>
+            <a class="<%= class_name %>" href="<%- url_for(post.path) %>"><%- title_icon %><%= post.title %></a>
         </h1>
     <% } else { %>
         <h1 class="<%= class_name %>" itemprop="name">
-            <%= post.title %>
+            <%- title_icon %><%= post.title %>
         </h1>
     <% } %>
 <% } %>

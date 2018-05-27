@@ -6,7 +6,7 @@
         <% if (post.link || post.title) { %>
             <header class="article-header">
                 <%- partial('post/title', { class_name: 'article-title' }) %>
-                <% if (post.layout != 'page') { %>
+                <% if (['page', 'tags'].indexOf(post.layout) < 0) { %>
                     <div class="article-meta">
                         <%- partial('post/date', { class_name: 'article-date', date_format: null }) %>
                         <%- partial('post/category') %>
@@ -28,6 +28,9 @@
                     <%- toc(post.content) %>
                 </div>
             <% } %>
+            <% if (post.layout === "tags") { %>
+                <%- partial('post/tag-cloud') %>
+            <% } %>
             <%- post.content %>
         <% } %>
         </div>
@@ -35,7 +38,7 @@
         <%- partial('post/tag-block') %>
         <footer class="article-footer">
             <%- partial('share/index', { post: post }) %>
-            <%- partial('comment/counter', { post: post }) %>
+            <%- (typeof post.comment === "undefined" || !!post.comment) ? partial('comment/counter', { post: post }) : '' %>
         </footer>
         <% } %>
     </div>
@@ -44,6 +47,6 @@
     <% } %>
 </article>
 
-<% if (!index) { %>
+<% if (!index && (typeof post.comment === "undefined" || !!post.comment)) { %>
     <%- partial('comment/index') %>
 <% } %>

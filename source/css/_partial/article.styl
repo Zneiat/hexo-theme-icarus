@@ -15,6 +15,12 @@
     border-bottom: 1px solid #F4F4F4
     .article-title
         display: block
+        .title-icon
+            margin-right: 15px
+            padding-right: 15px
+            vertical-align: middle
+            text-align: center
+            border-right: 1px solid #F4F4F4
 
 .article-title
     font-size: 2em
@@ -63,6 +69,8 @@
     color: color-default
     padding: article-padding + 5px article-padding article-padding article-padding
     line-height: line-height
+    & > *:first-child
+        margin-top: 0
     p
         text-align: justify
     p:last-child
@@ -96,22 +104,42 @@
     iframe
         border: none
     table
+        border-collapse: collapse
+        border-spacing: 0
+        border: 1px solid #F4F4F4
+        th
+            font-weight: bold
+            border: 1px solid #dfe2e5
+            padding: 6px 13px
+        td
+            padding: 6px 13px
+            border: 1px solid #dfe2e5
+        tr
+            background-color: #fff
+            border-top: 1px solid #c6cbd1
+            &:nth-child(2n)
+                background-color: #f6f8fa
+    .highlight table
         width: 100%
         border-collapse: collapse
         border-spacing: 0
-    th
-        font-weight: bold
-        border-bottom: 3px solid color-border
-        padding-bottom: 0.5em
-    td
-        border-bottom: 1px solid color-border
-        padding: 10px 0
+        border: 0
+        th
+            font-weight: bold
+            border: 0
+            padding-bottom: 0.5em
+        td
+            border: 0
+            padding: 10px 0
+        tr
+            background-color: transparent
+            border-top: 0
     blockquote
         position: static
         font-family: font-serif
         font-size: 1.1em
         margin: 0 -20px 20px -20PX
-        padding: 10px 20px 10px 54px
+        padding: 10px 20px 10px 20px
         background: #fcfcfc
         border-left: 4px solid #eee
         &:before

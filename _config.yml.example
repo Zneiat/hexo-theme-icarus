@@ -1,8 +1,8 @@
 # Menus
 menu:
   主页: /
-  时间轴: /archives
   目录: /categories
+  时间轴: /archives
   标签: /tags
   关于: /about
 
@@ -16,20 +16,21 @@ customize:
     profile:
         enabled: true # Whether to show profile bar
         avatar: /images/avatar.png # https://avatars1.githubusercontent.com/u/22412567
+        cover: /images/profile-cover.jpg
         gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
         author: ZNEIAT
-        author_title: 生命不止，折腾不息
-        location: China
+        author_title: 不忘初心，方得始终
+        tags_link: /tags
+        posts_link: /archives
     highlight: monokai
     sidebar: right # sidebar position, options: left, right or leave it empty
     thumbnail: true # enable posts thumbnail, options: true, false
     favicon: # path to favicon
     social_links:
         github: https://github.com/Zneiat
-        twitter: /
-        facebook: /
-        dribbble: /
-        rss: /
+        twitter: https://twitter.com/Kiroey
+        rss: /atom.xml
+        more: /about/
     social_link_tooltip: true # enable the social link tooltip, options: true, false
 
 # Widgets
@@ -71,7 +72,7 @@ comment:
         notify: # enter true to enable <Mail notifier> https://github.com/xCss/Valine/wiki/Valine-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E9%82%AE%E4%BB%B6%E6%8F%90%E9%86%92%E8%AE%BE%E7%BD%AE
         verify: # enter true to enable <Validation code>
         placeholder: Just Do It # enter the comment box placeholder
-    
+
 
 # Share
 share: default # options: jiathis, bdshare, addtoany, default

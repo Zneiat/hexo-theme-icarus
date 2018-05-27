@@ -85,17 +85,35 @@
     margin-top: 8px
 
 .layout-wrap-inner
-    &.list-categories
+    &.tag-cloud
+        a
+            @extend $link-dark
+            margin-right: 8px
+            &:before
+                content: '#'
+
+.layout-categories
+    margin: block-margin 0
+    .layout-wrap-inner
+        @extend $block
         ul
-            margin-left: 15px
             list-style: none
-            li,
-            .category-list-child
-                padding: 10px 0
+            padding: 0 0 2px 0
+            li, category-list-child
+                position: relative
                 font-size: font-size
-                border-bottom: 1px solid border-color
+                border-bottom: 1px solid color-border
                 a
+                    display: block
+                    padding: 15px 20px
                     color: color-sidebar-text
+                    &:hover
+                        background: #F4F4F4
+                .category-list-count
+                    position: absolute
+                    right: 20px
+                    top: 15px
+                    z-index: 1
             ul, ol
                 list-style: none
                 li
@@ -104,6 +122,7 @@
                         padding-bottom: 0px
         li
             a
+                background: #FFF
                 &:before
                     color: #ccc
                     content: "\f2f6"
@@ -113,12 +132,6 @@
                     transition: 0.2s ease
                 &:hover:before
                     color: color-sidebar-text-dark
-    &.tag-cloud
-        a
-            @extend $link-dark
-            margin-right: 8px
-            &:before
-                content: '#'
 
 #page-nav
     clearfix()

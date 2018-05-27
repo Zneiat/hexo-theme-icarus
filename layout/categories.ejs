@@ -1,8 +1,10 @@
-<section class="layout-wrap">
-    <div class="layout-title">
-        <span><%= page.title %></span>
-    </div>
-    <div class="layout-wrap-inner list-categories">
+<section class="layout-wrap layout-categories">
+    <div class="layout-wrap-inner">
+        <div class="article-header">
+            <h1 class="article-title">
+                <i class="title-icon zmdi zmdi-folder"></i> <%= page.title %>
+            </h1>
+        </div>
         <% if(site.categories.length) { %>
             <%- list_categories(site.categories) %>
         <% } %>
