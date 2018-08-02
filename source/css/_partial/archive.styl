@@ -108,7 +108,7 @@
                     padding: 15px 20px
                     color: color-sidebar-text
                     &:hover
-                        background: #F4F4F4
+                        color: color-link
                 .category-list-count
                     position: absolute
                     right: 20px
@@ -119,19 +119,23 @@
                 li
                     border: none
                     &:last-child
-                        padding-bottom: 0px
+                        padding-bottom: 0
         li
             a
                 background: #FFF
                 &:before
                     color: #ccc
-                    content: "\f2f6"
+                    content: "\f2fb"
                     font-size: 12px
-                    margin-right: 6px
+                    margin-right: 15px
                     font-family: Material-Design-Iconic-Font
                     transition: 0.2s ease
                 &:hover:before
-                    color: color-sidebar-text-dark
+                    color: color-link
+            & > ul li a
+                padding-left: 40px
+                &:before
+                    content: none
 
 #page-nav
     clearfix()

@@ -18,7 +18,7 @@ customize:
         avatar: /images/avatar.png # https://avatars1.githubusercontent.com/u/22412567
         cover: /images/profile-cover.jpg
         gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
-        author: ZNEIAT
+        author: QWQAQ
         author_title: 不忘初心，方得始终
         tags_link: /tags
         posts_link: /archives
@@ -27,11 +27,14 @@ customize:
     thumbnail: true # enable posts thumbnail, options: true, false
     favicon: # path to favicon
     social_links:
-        github: https://github.com/Zneiat
+        github: https://github.com/qwqcode
         twitter: https://twitter.com/Kiroey
         rss: /atom.xml
         more: /about/
     social_link_tooltip: true # enable the social link tooltip, options: true, false
+
+post:
+  banner_use_asset_img: false # https://hexo.io/docs/asset-folders.html#Post-Asset-Folder
 
 # Widgets
 widgets:
