@@ -4,8 +4,20 @@
     @media mq-tablet
         column(sidebar-column-tablet)
 
+.category-list-count
+.tag-list-count
+.archive-list-count
+    padding-left: 5px
+    color: color-grey
+    font-size: 0.85em
+    &:before
+        content: "("
+    &:after
+        content: ")"
+
 .widget
     @extend $base-style
+    position: relative
     line-height: line-height
     word-wrap: break-word
     font-size: 0.9em
@@ -19,45 +31,8 @@
         ol
             list-style: decimal
 
-.category-list-count
-.tag-list-count
-.archive-list-count
-    padding-left: 5px
-    color: color-grey
-    font-size: 0.85em
-    &:before
-        content: "("
-    &:after
-        content: ")"
-
-.tagcloud
-    a
-        margin-right: 5px
-
-.widget-wrap
-    margin: block-margin 0
-    background: #FFF
-    border-radius: 4px
-    @media mq-mini
-        margin: block-margin 20px
-
-.widget-title
-    @extend $block-caption
-    color: color-default
-    padding: 15px
-    margin-bottom: 0
-    border-bottom: 1px solid #F4F4F4
-
-    &:before
-        color: color-link
-        content: "\f2fb"
-        font-size: 12px
-        margin-right: 15px
-        font-family: Material-Design-Iconic-Font
-        transition: 0.2s ease
-
 .widget
-    padding: 5px 15px 15px 15px
+    padding: 5px 15px 5px 15px
     a
         color: color-sidebar-text
         text-decoration: none
@@ -94,6 +69,32 @@
                     transition: 0.2s ease
                 &:hover:before
                     color: color-sidebar-text-dark
+
+.tagcloud
+    a
+        margin-right: 5px
+
+.widget-wrap
+    margin: block-margin 0
+    background: #FFF
+    border-radius: 4px
+    @media mq-mini
+        margin: block-margin 20px
+
+.widget-title
+    @extend $block-caption
+    color: color-default
+    padding: 15px
+    margin-bottom: 0
+    border-bottom: 1px solid #F4F4F4
+
+    &:before
+        color: color-link
+        content: "\f2fb"
+        font-size: 12px
+        margin-right: 15px
+        font-family: Material-Design-Iconic-Font
+        transition: 0.2s ease
 
 #toTop
     @extend $block
@@ -178,3 +179,198 @@
                 opacity: 0.8
             .item-title a
                 color: color-link
+
+#sidebar-left
+    column(sidebar-left-column)
+    @media mq-normal
+        display: block
+    position: relative
+    display: none
+    margin-bottom: block-margin
+
+#profile
+    .profile-block
+        position relative
+        padding: 15px 20px
+        border-bottom: 1px solid color-border
+        &:last-child
+            border-bottom: none
+
+    .inner
+        @extend $block
+        margin-top: block-margin
+        background: white
+        .base-info
+            height: base-info-height
+            padding: 0
+            overflow: hidden
+            avatar-offset = (profile-cover-height/2 + 20)
+            avatar-margin = 23px
+            .profile-top-part
+                position: absolute
+                width: 100%
+                z-index: 1
+                height: base-info-height
+            .profile-bg
+                background-color: #FFF
+                height: profile-cover-height
+                background-image: url(profile-cover-url);
+                background-repeat: no-repeat;
+                background-size: 100% profile-cover-height;
+            .info-inner
+                position: relative
+                display: inline-block
+                margin-top: profile-cover-height
+                margin-left: (profile-avatar-size + avatar-margin)
+            #avatar
+                position: absolute
+                display: block
+                margin: avatar-offset auto 0 avatar-margin
+                width: profile-avatar-size
+                height: profile-avatar-size
+                box-sizing: border-box
+                color: rgb(255, 255, 255)
+                border-radius: 10px
+                border: 3px solid rgb(255, 255, 255)
+            #name, #title, #location
+                display: block
+                padding-left: 17px
+                padding-right: 17px
+            #name
+                color: #555
+                font-size: 18px
+                font-weight: 600
+                text-align: left
+                padding-top: 15px
+                padding-bottom: 5px
+            #title
+                color: color-meta
+                font-size: 12px
+                padding-bottom: 15px
+
+        .article-info
+            clearfix()
+            padding: 20px 10px
+            .article-info-block
+                width: 50%
+                float: left
+                padding: 0 15px
+                text-align: center
+                box-sizing: border-box
+                font-size: font-size + 6px
+                a
+                    color: #51c2ff
+                span
+                    color: color-meta
+                    margin-left: 3px
+                    font-size: font-size
+                    text-transform: uppercase
+                &:first-child
+                    border-right: 1px solid color-border
+        .social-links
+            padding: 10px 10px
+            display: flex
+            flex-direction: row
+            .social-link-item
+                text-align: center
+                font-size: font-size + 10px
+                flex: 1
+                a
+                    position: relative
+                    transition: 0.2s ease
+                    color: color-default + #333
+                    &:hover
+                        color: color-default
+                    &.tooltip:hover
+                        &:after
+                            right: -150%
+                            top: -41px
+                            color: white
+                            background: #333
+                            font-size: 14px
+                            content: attr(title)
+                            display: block
+                            padding: 5px 15px
+                            position: absolute
+                            white-space: nowrap
+                            border-radius: 2px
+                            text-transform: uppercase
+                            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2)
+                            z-index: 1
+                        &:before
+                            top: -12px
+                            right: 8px
+                            border: solid
+                            border-color: #333 transparent
+                            border-width: 5px 5px 0 5px
+                            content: ""
+                            display: block
+                            position: absolute
+                            z-index: 2
+    &.card
+        top: 50px
+        right: 20px
+        z-index: 999
+        display: block
+        min-width: 280px
+        position: absolute
+        .profile-inner
+            position: relative
+            &:before, &:after
+                z-index: 1
+                content: ''
+                top: -20px
+                right: 10px
+                position: absolute
+                border-width: 10px
+                border-style: solid
+                border-color: transparent transparent white transparent
+            &:after
+                z-index: 0
+                border-color: transparent transparent color-border - #111 transparent
+
+#article-content-index
+    .widget
+        padding-left: 0
+        padding-right: 0
+        padding-bottom: 0
+        &:after
+            pointer-events: none
+            position: absolute
+            z-index: 1
+            display: block
+            overflow: hidden
+            width: 100%
+            content: " "
+            bottom: 0
+            height: 5%
+            background: linear-gradient(180deg, hsla(0,0%,100%,0) 0, hsla(0,0%,100%,.8))
+
+    .index-list
+        display: block
+        overflow-y: auto
+        padding-bottom: 5px
+        
+        .item
+            border-left: 2px solid transparent
+
+            for number in 2 3 4 5 6
+                &.type-{number}
+                    padding-left: number * 10 px 
+
+            a
+                display: block
+                padding: 10px 15px 10px 0
+
+            &.active, &:hover
+                border-left: 2px solid color-link
+
+            &.active a
+                color: color-link
+
+        &::-webkit-scrollbar
+            width: 2px
+            background: transparent
+
+        &::-webkit-scrollbar-thumb
+            background: rgba(86, 86, 86, 0.3)

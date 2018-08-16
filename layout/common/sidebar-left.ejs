@@ -1,0 +1,12 @@
+<aside id="sidebar-left">
+
+    <div class="sidebar-fixed">
+        <div class="sidebar-fixed-inner">
+            <%- partial('sidebar-left/profile') %>
+            <% if (!is_home()) { %>
+            <%- partial('sidebar-left/article-content-index') %>
+            <% } %>
+        </div>
+    </div>
+
+</aside>

@@ -1,13 +1,19 @@
 # Icarus
 
-![](https://user-images.githubusercontent.com/22412567/39397255-d1041bc4-4b2e-11e8-9be5-da96f871c5a6.png)
+![](https://user-images.githubusercontent.com/22412567/44213768-104ba680-a1a1-11e8-8bdb-1fef32501d63.png)
 
 #### [View Documentation](https://github.com/ppoffice/hexo-theme-icarus/wiki)
 :star: It is strongly recommended that you read the docs before using Icarus.
 
 ## Features
 
-### Fixed Profile Sidebar
+### 边栏文章内容目录
+
+获取文章中的所有标题并生成目录
+
+![](https://user-images.githubusercontent.com/22412567/44213292-f2ca0d00-a19f-11e8-87b9-d180e9708586.png)
+
+### 固定的 Profile Sidebar
 
 A nice place to show yourself and it's a fixed place. You can add your own information in your site's `_config.yml`
 
