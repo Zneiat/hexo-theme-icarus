@@ -14,18 +14,18 @@
     border-bottom: 1px solid #F4F4F4
     .article-title
         display: block
-        .title-icon
-            margin-right: 15px
-            padding-right: 15px
-            vertical-align: middle
-            text-align: center
-            border-right: 1px solid #F4F4F4
 
 .article-title
     font-size: 2em
     color: color-default
     text-decoration: none
     line-height: line-height-title
+    .title-icon
+      margin-right: 15px
+      padding-right: 15px
+      vertical-align: middle
+      text-align: center
+      border-right: 1px solid #F4F4F4
     a&:visited
         color: color-default
     a&:hover
@@ -79,8 +79,6 @@
     p, table
         line-height: line-height
         margin: line-height 0
-    h1, h2, h3, h4, h5, h6
-        font-weight: bold
     h1, h2, h3, h4, h5, h6
         line-height: line-height-title
         margin: 0 0 line-height-title 0
@@ -272,7 +270,8 @@
 .share-container
     float: left
 
-.article-share-link
+.article-share-link,
+.article-pv-link
     float: right
     cursor: pointer
     margin-left: 20px

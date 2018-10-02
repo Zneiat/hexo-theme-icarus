@@ -1,6 +1,6 @@
 Please make sure these boxes are checked before submitting your issue. Thank you!
 
-- [ ] I have setuped and configurated the blog according to [Hexo official documentation](https://hexo.io/);
+- [x] I have setuped and configurated the blog according to [Hexo official documentation](https://hexo.io/);
 - [ ] I have read the [Theme Wiki](https://github.com/ppoffice/hexo-theme-icarus/wiki) carefully and created my own configuration file(_config.yml);
 - [ ] I have looked up the [Issues](https://github.com/ppoffice/hexo-theme-icarus/issues) and found no duplicate issues.
 

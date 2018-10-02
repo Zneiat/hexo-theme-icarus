@@ -36,7 +36,7 @@
         </div>
         <% if (!index) { %>
             <% if (post.layout === 'post') { %>
-            <div class="article-copyright">本站文章除注明转载外均为原创，版权为 <a href="<%= config.url %>"><%= config.author %></a> 所有，未经允许不得转载. <%= url %></div>
+            <div class="article-copyright">本站文章除注明转载外均为原创，未经允许不要转载哇. ヾ(ﾟｰﾟヾ) <%= url %></div>
             <% } %>
         <%- partial('post/tag-block') %>
         <footer class="article-footer">
@@ -50,6 +50,6 @@
     <% } %>
 </article>
 
-<% if (!index && (typeof post.comment === "undefined" || !!post.comment)) { %>
+<% if (!index) { %>
     <%- partial('comment/index') %>
 <% } %>

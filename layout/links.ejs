@@ -1,0 +1,39 @@
+<% var links = page.links; %>
+<% var post = page; %>
+<div class="links links-wrap">
+  <div class="links-title">
+    <h1 class="article-title" itemprop="name">
+      <i class="title-icon zmdi zmdi-link"></i> <%- page.title %>
+    </h1>
+  </div>
+  <div class="links-list">
+    <% for (var name in links) { %>
+    <% var link = links[name]; %>
+    <div class="link-card">
+      <div class="inner">
+      <a class="link" href="<%- link[1] %>" target="_blank" rel="noopener"></a>
+      <div class="face">
+        <% if (typeof link[0] !== "undefined" && !!link[0]) { %>
+        <div style="background-image: url(<%- link[0] %>);" class="face-img"></div>
+        <% } else { %>
+        <div class="face-text"><%= name.substr(0, 1) %></div>
+        <% } %>
+      </div>
+      <div class="info">
+        <span class="name"><%= name %></span>
+        <span class="desc"><%= link[2] || link[1].split('/')[2] %></span>
+      </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <article class="article">
+    <div class="article-inner">
+      <div class="article-entry">
+        <%- post.content %>
+      </div>
+    </div>
+  </article>
+</div>
+
+<%- partial('comment/index') %>

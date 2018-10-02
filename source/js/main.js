@@ -32,6 +32,8 @@
         $('.justified-gallery').justifiedGallery(options);
     }
 
+    var isMobile = $(document).width() < 800;
+
     // Article content index
     (function () {
         var indexElem = $('#article-content-index');
@@ -81,10 +83,10 @@
 
     // Profile card
     $(document).on('click', function () {
-        $('#profile').removeClass('card');
+        $('#sidebar-left').removeClass('card');
     }).on('click', '#profile-anchor', function (e) {
         e.stopPropagation();
-        $('#profile').toggleClass('card');
+        $('#sidebar-left').toggleClass('card');
     }).on('click', '.profile-inner', function (e) {
         e.stopPropagation();
     });
@@ -110,8 +112,10 @@
         var scrollTop = $(document).scrollTop();
         var fixedElem = $('#sidebar-left .sidebar-fixed');
         var InnerElem = $('#sidebar-left .sidebar-fixed .sidebar-fixed-inner');
-        var needFixedElem = scrollTop >= fixedElem.offset().top + fixedElem.outerHeight(true);
+        var needFixedElem = (scrollTop >= fixedElem.offset().top + fixedElem.outerHeight(true));
         var isFixed = InnerElem.is('.has-fixed');
+
+        if (isMobile) return;
 
         if (!needFixedElem) {
             // 不固定
@@ -145,7 +149,7 @@
         var whereShow = $(window).height();
         var isNeedShow = (scrollTop > 0) && (scrollTop > whereShow);
 
-        if ($(document).width() >= 800) {
+        if (!isMobile) {
             if (isNeedShow) {
                 if (isShowToTop) return;
                 toTopElem.css('left', $('#sidebar').offset().left);

@@ -1,0 +1,83 @@
+.links-wrap
+  margin: block-margin 0
+
+.links-wrap .links-title
+  @extend $block
+  padding: 20px 20px
+  border-bottom: 1px solid #f4f4f4
+  margin-bottom: block-margin
+
+.links-wrap .links-list
+  margin: 0 -4px
+  clearfix()
+
+  .link-card
+    margin-bottom: 10px
+    @media mq-normal
+      float: left
+      width: 50%
+    @media mq-tablet
+      float: left
+      width: 50%
+    @media mq-mobile
+      width: 100%
+    @media mq-mini
+      width: 100%
+
+    & > .inner
+      @extend $block
+      position: relative
+      overflow: hidden
+      height: 90px
+      margin: 0 4px
+      display: flex
+      place-items: center
+      flex-flow: row
+      transition: 0.3s all linear
+      &:hover
+        @media mq-normal
+          transform: translate3d(0, -4px, 0)
+          box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1)
+
+      .link
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        text-decoration: none
+        z-index: 10
+        opacity: 0;
+
+      .face
+        flex-basis: profile-avatar-size
+        .face-text
+          width: profile-avatar-size
+          height: profile-avatar-size
+          line-height: profile-avatar-size
+          font-size: 30px
+          text-align: center
+          background-color: #e9ebed
+          color: color-meta
+        .face-img
+          border-radius: 0
+          background-color: #e9ebed
+          width: profile-avatar-size
+          height: profile-avatar-size
+          background-size: cover
+          background-position: center
+          background-repeat: no-repeat
+      .info
+        flex: 1
+        padding: 0px 15px
+        .name
+          color: color-default
+          display: block
+          font-size: 20px
+        .desc
+          margin-top: 5px
+          color: color-meta
+          display: block
+          font-size: 14px
+          a
+            color: color-meta

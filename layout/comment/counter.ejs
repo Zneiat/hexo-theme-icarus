@@ -13,5 +13,7 @@
         <a href="<%= post.permalink %>#comments" id="sourceId::<%= post.path %>" class="article-comment-link cy_cmt_count"><%= __('article.comments') %></a>
     <% } else if (theme.comment.livere) { %>
         <a href="<%- post.permalink %>#comments" class="article-comment-link"><%= __('article.comments') %></a>
+    <% } else if (theme.comment.valine && theme.comment.valine.on && theme.comment.valine.visitor) { %>
+      <a class="article-pv-link leancloud-visitors" id="<%- post.permalink %>" data-flag-title="<%- post.title %>"><i class="zmdi zmdi-eye"></i> 阅读量 <span class="leancloud-visitors-count">...</span></a>
     <% } %>
 <% } %>

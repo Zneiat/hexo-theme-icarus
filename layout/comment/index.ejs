@@ -1,4 +1,4 @@
-<% if (post.comments) { %>
+<% if (typeof page.comments === "undefined" || !!page.comments) { %>
     <% if (theme.comment.disqus) { %>
         <section id="comments"><%- partial('comment/disqus') %></section>
     <% } else if (theme.comment.duoshuo) { %>
