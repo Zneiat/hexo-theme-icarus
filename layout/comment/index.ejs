@@ -13,9 +13,9 @@
         <section id="comments"><%- partial('comment/changyan') %></section>
     <% } else if (theme.comment.livere) { %>
         <section id="comments"><%- partial('comment/livere') %></section>
-    <% } else if (theme.comment.valine && 
-        theme.comment.valine.on && 
-        theme.comment.valine.appId && 
+    <% } else if (theme.comment.valine &&
+        theme.comment.valine.on &&
+        theme.comment.valine.appId &&
         theme.comment.valine.appKey) { %>
         <section id="comments"><%- partial('comment/valine') %></section>
     <% } else if (theme.comment.gitment &&
@@ -24,5 +24,7 @@
         theme.comment.gitment.client_id &&
         theme.comment.gitment.client_secret) { %>
         <section id="comments"><%- partial('comment/gitment') %></section>
+    <% } else if (theme.comment.artalk.on) { %>
+        <section id="comments"><%- partial('comment/artalk') %></section>
     <% } %>
 <% } %>

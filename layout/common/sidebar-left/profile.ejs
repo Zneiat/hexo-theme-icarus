@@ -14,13 +14,13 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                <a href="<%- url_for(theme.customize.profile.tags_link) %>">
+                <a href="<%- url_for(theme.customize.profile.posts_link) %>">
                     <%= site.posts.length %>
                     <span><%= (site.posts.length > 1 ? __('profile.posts') : __('profile.post')) %></span>
                 </a>
             </div>
             <div class="article-info-block">
-                <a href="<%- url_for(theme.customize.profile.posts_link) %>">
+                <a href="<%- url_for(theme.customize.profile.tags_link) %>">
                     <%= tagCount %>
                     <span><%= (tagCount > 1 ? __('profile.tags') : __('profile.tag')) %></span>
                 </a>

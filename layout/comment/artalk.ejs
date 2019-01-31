@@ -1,0 +1,12 @@
+<%- js('libs/artalk/Artalk.js') %>
+<div id="ArtalkComments"></div>
+<script>
+  var artalk = new Artalk({
+    el: '#ArtalkComments',
+    placeholder: '来啊，快活啊 (/ω＼)',
+    defaultAvatar: 'mp',
+    pageSize: 50,
+    pageKey: '<%= page.permalink %>',
+    serverUrl: '<%= theme.comment.artalk.serverUrl %>'
+  })
+</script>

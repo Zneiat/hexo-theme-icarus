@@ -1,4 +1,10 @@
+<% var pinyin = pinyin(); %>
 <% var links = page.links; %>
+<% var linksSortKeys = Object.keys(links).sort(function (a, b) {
+  var a = pinyin(a, {style: pinyin.STYLE_FIRST_LETTER})[0][0];
+  var b = pinyin(b, {style: pinyin.STYLE_FIRST_LETTER})[0][0];
+  return a.localeCompare(b);
+}); %>
 <% var post = page; %>
 <div class="links links-wrap">
   <div class="links-title">
@@ -7,7 +13,8 @@
     </h1>
   </div>
   <div class="links-list">
-    <% for (var name in links) { %>
+    <% for (var i in linksSortKeys) { %>
+    <% var name = linksSortKeys[i]; %>
     <% var link = links[name]; %>
     <div class="link-card">
       <div class="inner">
