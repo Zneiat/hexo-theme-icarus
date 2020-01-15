@@ -18,7 +18,7 @@ widget:
     tags: '标签'
     tag_cloud: '标签云'
 article:
-    more: '继续阅览'
+    more: '查看全文'
     comments: '评论'
     share: '分享到'
     catalogue: '文章目录'
