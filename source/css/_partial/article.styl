@@ -4,24 +4,26 @@
 .article-inner
     @extend $block
     overflow: hidden
+    border: 1px solid color-border
 
 .article-banner
     width:100%
     height:auto
 
 .article-header
-    padding: article-padding article-padding
-    border-bottom: 1px solid #F4F4F4
+    padding: 18px article-padding  15px article-padding
     .article-title
         display: block
 
 .article-title
-    font-size: 2em
-    color: color-default
+    font-weight: 300
+    text-align: center
+    font-size: 2.1em
+    color: color-primary
     text-decoration: none
     line-height: line-height-title
     .title-icon
-      margin-right: 15px
+      margin-right: 21px
       padding-right: 15px
       vertical-align: middle
       text-align: center
@@ -36,19 +38,22 @@
         font-size: 1.6em
 
 .article-meta
+    text-align: center
     margin-top: 14px
     @extend $block-caption
     clearfix()
     line-height: 1.6em
     & > div
-        float: left
-        margin-right: 10px
-        i
-            margin-right: 3px
+      display: inline-flex
+      align-items: center
+      margin-right: 10px
+      font-size: 15px
+      i
+        margin-right: 8px
+    & > div:hover a, & > div:hover i
+      color: color-link
     a
         color: color-meta
-        &:hover
-            color: color-link
     i
         margin-right: 3px
         color: color-meta
@@ -68,6 +73,7 @@
     color: color-default
     padding: article-padding + 5px article-padding article-padding article-padding
     line-height: line-height
+    font: 400 18px/1.75 font-sans
     & > *:first-child
         margin-top: 0
     p
@@ -84,10 +90,10 @@
         margin: 0 0 line-height-title 0
     h2
         font-size: 24px
-        margin: 0 -20px 20px -20PX
-        padding: 10px 25px 10px 25px
-        color: #03a9f4
-        border-left: 4px solid #03a9f4
+        margin: 0 -25px 20px -25PX
+        padding: 15px 30px 15px 30px
+        color: color-link
+        border-left: 4px solid  color-link
         background: #fcfcfc
     h3
         font-size: 22px
@@ -106,6 +112,7 @@
         margin-top: line-height
         margin-bottom: line-height
     img, video
+        border-radius: 10px
         max-width: 100%
         height: auto
         margin: auto
@@ -150,7 +157,7 @@
         position: static
         font-family: font-serif
         font-size: 1.1em
-        margin: 0 -20px 20px -20PX
+        margin: 0 -25px 20px -25PX
         padding: 10px 20px 10px 20px
         background: #fcfcfc
         border-left: 4px solid #eee
@@ -212,6 +219,7 @@
     transition: all ease 200ms
     text-decoration: none
     border: 2px solid transparent
+    border-radius: 50px
     &:hover
         text-decoration: none
         text-indent: 0
@@ -223,6 +231,7 @@
         opacity: 1
 
 .article-copyright
+    text-align: center
     font-size: 12px
     line-height: 25px
     color: #999
@@ -231,6 +240,7 @@
 
 .article-tag-block
     clearfix()
+    text-align: center
     padding: 5px article-padding
     line-height: line-height
     i
@@ -253,7 +263,7 @@
     font-size: 0.85em
     line-height: line-height
     border-top: 1px solid color-border
-    padding: article-padding
+    padding: article-padding 30px
     a
         color: color-grey
         text-decoration: none

@@ -85,6 +85,7 @@
     margin-top: 8px
 
 .layout-wrap-inner
+    @extend $block
     &.tag-cloud
         a
             @extend $link-dark
@@ -95,20 +96,24 @@
 .layout-categories
     margin: block-margin 0
     .layout-wrap-inner
+        border: 1px solid color-border
         @extend $block
+        padding: 5px 15px 20px 15px
         ul
             list-style: none
             padding: 0 0 2px 0
             li, category-list-child
                 position: relative
                 font-size: font-size
-                border-bottom: 1px solid color-border
                 a
                     display: block
                     padding: 15px 20px
                     color: color-sidebar-text
+                    border-radius: 1000px
                     &:hover
                         color: color-link
+                        padding: 15px 26px
+                        background: #F4F4F4
                 .category-list-count
                     position: absolute
                     right: 20px
@@ -134,32 +139,33 @@
                     color: color-link
             & > ul li a
                 padding-left: 40px
+                &:hover
+                  padding-left: 45px
                 &:before
                     content: none
 
 #page-nav
     clearfix()
-    margin: block-margin auto
+    margin: 15px auto 20px auto
     text-align: center
     color: color-grey
     overflow: hidden
     a, span
         height: 32px
-        padding: 0 10px
+        padding: 0 18px
         line-height: 32px
         text-align: center
         display: inline-block
-        border-radius: 2px
+        border-radius: 100px
+        &:not(:last-child)
+          margin-right: 10px
     a
         color: color-grey
         text-decoration: none
-        &:hover
-            color: white
-            background: color-link
     .page-number
         display: inline-block
         @media mq-mini
             display: none
-    .current
-        color: color-default
-        font-weight: bold
+    .current, a:hover
+      color: white
+      background: color-link

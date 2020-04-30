@@ -4,7 +4,9 @@
     <div class="inner profile-inner">
         <div class="base-info profile-block">
             <div class="profile-top-part">
-                <img id="avatar" src="<%= ( profile.gravatar ? gravatar(profile.gravatar, 128) : url_for(profile.avatar)) %>" />
+                <div class="avatar-wrap">
+                  <img id="avatar" src="<%= ( profile.gravatar ? gravatar(profile.gravatar, 128) : url_for(profile.avatar)) %>" draggable="false" />
+                </div>
                 <div class="info-inner">
                     <h2 id="name"><%= profile.author %></h2>
                     <h3 id="title"><%= profile.author_title %></h3>

@@ -1,4 +1,4 @@
 ---
-title: "友链"
+title: "友人帐"
 layout: "links"
 ---

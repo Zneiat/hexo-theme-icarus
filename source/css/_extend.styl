@@ -16,7 +16,9 @@ $block
     background: #fff
     border-radius: 4px
     overflow: hidden
-    border: 1px solid rgba(225, 225, 225, 0.5)
+    border-radius: 32px;
+    @media mq-mini
+      border-radius: 2px
 
 $base-style
     h1
@@ -36,6 +38,7 @@ $base-style
         border: 1px dashed color-border
     strong
         font-weight: bold
+        color: color-primary
     em, cite
         font-style: italic
     sup, sub

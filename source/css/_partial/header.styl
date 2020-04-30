@@ -1,13 +1,6 @@
 #header
   background: white
   position: relative
-  border-bottom: 1px solid rgba(225,225,225,0.5);
-  a, a:visited
-    white-space: nowrap
-    transition: 0.2s ease
-    color: color-default
-  a:hover
-    color: color-link
 
 $header-block
   height: logo-height
@@ -27,7 +20,6 @@ $header-block-right
     @extend $header-block
     @extend $header-block-left
     display: inline-block
-    border-right: 1px solid #F4F4F4;
     .logo
       display: inline-block
     .site-title
@@ -84,7 +76,7 @@ $header-block-right
 $nav-link
   float: left
   display: block
-  padding: 0 15px
+  padding: 0 18px
 
 .nav-icon
   @extend $nav-link
@@ -98,12 +90,27 @@ $nav-link
   line-height: logo-height !important
 
 .main-nav-link
-  @extend $nav-link
   position: relative
+  @extend $nav-link
+  white-space: nowrap
+  transition: 0.2s ease
+  color: color-primary
   font-weight: 300
-  color: color-default !important
+  border-radius: 500px
+  &:not(:last-child)
+    margin-right: 5px
+  &:visited
+    color: color-primary
   &.active
+    font-weight: 500
     color: color-link !important
+  &:hover
+    color: color-link
+    background: rgba(29, 161, 242, 0.1)
+  @media mq-mini
+    &:hover
+      color: color-primary
+      background: transparent
 
 #sub-nav
   @media mq-normal
@@ -130,12 +137,17 @@ $nav-link
     display: none
   @extend $header-block
   @extend $header-block-right
-  border-left: 1px solid #F4F4F4;
   .search-form
     position: relative
+    border-radius: 32px
+    transition: background 0.2s ease-in-out
+    @media mq-mini
+      border-radius: 0
+    &:hover
+      background: #F4F4F4
     .search-form-input
       width: 100%
-      padding: 0 30px 0 15px
+      padding: 0 30px 0 19px
       line-height: logo-height
       height: 34px !important
       border-radius: 2px

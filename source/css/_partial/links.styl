@@ -1,18 +1,20 @@
 .links-wrap
   margin: block-margin 0
+  overflow: hidden
 
 .links-wrap .links-title
   @extend $block
   padding: 20px 20px
-  border-bottom: 1px solid #f4f4f4
   margin-bottom: block-margin
+  .article-title
+    text-align: left
 
 .links-wrap .links-list
   margin: 0 -4px
   clearfix()
 
   .link-card
-    margin-bottom: 10px
+    margin-bottom: 18px
     @media mq-normal
       float: left
       width: 50%
@@ -26,18 +28,20 @@
 
     & > .inner
       @extend $block
+      border-radius: 1000px
       position: relative
       overflow: hidden
       height: 90px
-      margin: 0 4px
+      margin: 0 10px
       display: flex
       place-items: center
       flex-flow: row
+      border: 2px solid transparent
       transition: 0.3s all linear
       &:hover
         @media mq-normal
-          transform: translate3d(0, -4px, 0)
-          box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1)
+          .info .name
+            color: color-link
 
       .link
         position: absolute
@@ -50,32 +54,32 @@
         opacity: 0;
 
       .face
-        flex-basis: profile-avatar-size
+        flex-basis: links-avatar-size
         .face-text
-          width: profile-avatar-size
-          height: profile-avatar-size
-          line-height: profile-avatar-size
+          width: links-avatar-size
+          height: links-avatar-size
+          line-height: links-avatar-size
           font-size: 30px
           text-align: center
           background-color: #e9ebed
           color: color-meta
         .face-img
-          border-radius: 0
+          border-radius: 1000px
           background-color: #e9ebed
-          width: profile-avatar-size
-          height: profile-avatar-size
+          width: links-avatar-size
+          height: links-avatar-size
           background-size: cover
           background-position: center
           background-repeat: no-repeat
       .info
         flex: 1
-        padding: 0px 15px
+        padding: 0px 15px 0 25px
         .name
           color: color-default
           display: block
-          font-size: 20px
+          font-size: 23px
         .desc
-          margin-top: 5px
+          margin-top: 8px
           color: color-meta
           display: block
           font-size: 14px
